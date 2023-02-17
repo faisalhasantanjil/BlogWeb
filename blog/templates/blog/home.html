@@ -1,0 +1,19 @@
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block content %}
+    {% for blog in blogs %}
+    {% if blog.image %}
+    <img src="{{blog.image.url}}" alt="">
+{% endif %}
+    <p>{{blog.title}}</p>
+    <p>{{blog.category}}</p>
+    <p>{{blog.author}}</p>
+    <p>{{blog.description|truncatewords:10}}</p>
+    <a href="{% url 'detailedblog' blog.id %}"> See More</a>
+    {% endfor %}
+
+
+{% endblock content %}
+
+
+
