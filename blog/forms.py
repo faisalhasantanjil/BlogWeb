@@ -14,7 +14,8 @@ class BlogForm(ModelForm):
 
     class Meta:
         model = Blog
-        fields = '__all__'
+        #fields = '__all__'
+        exclude =['author']
 
 
 class CommmentForm(ModelForm):
